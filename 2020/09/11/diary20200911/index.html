@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="memorydependence">
+    <meta name="keywords" content="diary20200911, Blog test for Moonk-AZ">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>memorydependenceanalysis | Blog test for Moonk-AZ</title>
+    <title>diary20200911 | Blog test for Moonk-AZ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -330,12 +330,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">memorydependenceanalysis</h1>
+                    <h1 class="description center-align post-title">diary20200911</h1>
                 </div>
             </div>
         </div>
@@ -450,13 +450,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/llvm/">
-                                <span class="chip bg-color">llvm</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -464,8 +460,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LLVM/" class="post-category">
-                                LLVM
+                            <a href="/categories/diary/" class="post-category">
+                                diary
                             </a>
                         
                     </div>
@@ -477,7 +473,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-09
+                    2020-09-11
                 </div>
                 
 
@@ -493,13 +489,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>排版练习中</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> b = a * <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> c = a + b + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<p>简单描述，上述三行代码，a,b,c之间是有依赖关系的，b需要a的值，c需要b的值更新，这就是依赖，由于指令需要提高并发度，所以其实是必须等  a st(store)到一个register中，然后b才能调用这个register，后续一样，c必须等b st；这是最简单的例子。最近在分析一个bug中，不是以IR级别而是BB（basic blocks)级别；到目前为止，需要调整它的alignment还是删除掉这条ld（load），我尚无结论。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%1 &#x3D; vload &lt;4 * i16&gt;  %2 align 4</span><br></pre></td></tr></table></figure>
-
-<p>从check而言这是不合理的，但是如果改成align 8，是正确的吗，为什么在第一次instr combine的过程不将align调整为8 而是 4。</p>
+                <p>今天一直在分memoryaccess以及memorydependence，今天走入了一个误区：在LLVM的官方文档中，我发现了memoryaccess中的walker里有描述clobber的地方，但是经过请教同事，我发现这个clobber只是单纯的使用这个单词而已，而我一直在这份文档中试图找寻clobber的定义以及例子，真是丢大了。</p>
+<p>clobber的作用更类似于temp register。</p>
+<p>由于优先级安排，这件事情要先放一放了，我会在后续把这次的收获，memorydependenceAnalysis的观后感分析写一波，或许在周末。</p>
 
             </div>
             <hr/>
@@ -525,7 +517,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Moooonk-az.github.io/2020/09/09/memorydependenceanalysis/">http://Moooonk-az.github.io/2020/09/09/memorydependenceanalysis/</a>
+                    <a href="http://Moooonk-az.github.io/2020/09/11/diary20200911/">http://Moooonk-az.github.io/2020/09/11/diary20200911/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -562,11 +554,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/llvm/">
-                                    <span class="chip bg-color">llvm</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -606,9 +594,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/09/11/diary20200911/">
                     <div class="card-image">
@@ -626,9 +615,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -641,6 +630,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -648,7 +638,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2020/09/09/memorydependenceanalysis/">
@@ -685,7 +675,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     

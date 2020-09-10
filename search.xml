@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>diary20200911</title>
+      <link href="/2020/09/11/diary20200911/"/>
+      <url>/2020/09/11/diary20200911/</url>
+      
+        <content type="html"><![CDATA[<p>今天一直在分memoryaccess以及memorydependence，今天走入了一个误区：在LLVM的官方文档中，我发现了memoryaccess中的walker里有描述clobber的地方，但是经过请教同事，我发现这个clobber只是单纯的使用这个单词而已，而我一直在这份文档中试图找寻clobber的定义以及例子，真是丢大了。</p><p>clobber的作用更类似于temp register。</p><p>由于优先级安排，这件事情要先放一放了，我会在后续把这次的收获，memorydependenceAnalysis的观后感分析写一波，或许在周末。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> diary </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>memorydependenceanalysis</title>
       <link href="/2020/09/09/memorydependenceanalysis/"/>
       <url>/2020/09/09/memorydependenceanalysis/</url>
