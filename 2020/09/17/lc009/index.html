@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="memorydependence">
+    <meta name="keywords" content="lc009, Blog test for Moonk-AZ">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>memorydependenceanalysis | Blog test for Moonk-AZ</title>
+    <title>lc009 | Blog test for Moonk-AZ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -330,12 +330,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">memorydependenceanalysis</h1>
+                    <h1 class="description center-align post-title">lc009</h1>
                 </div>
             </div>
         </div>
@@ -452,8 +452,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/llvm/">
-                                <span class="chip bg-color">llvm</span>
+                            <a href="/tags/leetcode/">
+                                <span class="chip bg-color">leetcode</span>
                             </a>
                         
                     </div>
@@ -464,8 +464,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/LLVM/" class="post-category">
-                                LLVM
+                            <a href="/categories/CodeSet/" class="post-category">
+                                CodeSet
                             </a>
                         
                     </div>
@@ -477,7 +477,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-09
+                    2020-09-17
                 </div>
                 
 
@@ -493,13 +493,15 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>排版练习中</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> b = a * <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> c = a + b + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<p>简单描述，上述三行代码，a,b,c之间是有依赖关系的，b需要a的值，c需要b的值更新，这就是依赖，由于指令需要提高并发度，所以其实是必须等  a st(store)到一个register中，然后b才能调用这个register，后续一样，c必须等b st；这是最简单的例子。最近在分析一个bug中，不是以IR级别而是BB（basic blocks)级别；到目前为止，需要调整它的alignment还是删除掉这条ld（load），我尚无结论。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%1 &#x3D; vload &lt;4 * i16&gt;  %2 align 4</span><br></pre></td></tr></table></figure>
-
-<p>从check而言这是不合理的，但是如果改成align 8，是正确的吗，为什么在第一次instr combine的过程不将align调整为8 而是 4。</p>
+                <h4 id="9-回文数"><a href="#9-回文数" class="headerlink" title="9. 回文数"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/palindrome-number/">9. 回文数</a></h4><h6 id="从简单开始记录收获吧"><a href="#从简单开始记录收获吧" class="headerlink" title="从简单开始记录收获吧"></a>从简单开始记录收获吧</h6><p>回文的题有很多种，这种是很简单的；以前上课也有做过应该；</p>
+<p><strong>直接回算，是很简单明了的一种思路：既然可回文，那么反向计算并判断最终结果是否与原来相等即可；</strong></p>
+<p>另外此题负数并不是障碍，反而是可以直接返回false；</p>
+<p>用例有超出int范围的数字，使用long；</p>
+<h5 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h5><p>每道题都有学习的点，对上述进行改进：</p>
+<p>这题最茫然的思路当然是，<strong>将数字对折</strong>。</p>
+<p>对折的时间点就在与 上述回算的判断条件中  （x !=0)  改为 （x  &gt; sum)，这种对折的方法可以用到其他题中的。</p>
+<p>于是后续也不需要计算了。</p>
+<p>下面是官方盗来的图：鸣谢水印；<img src="https://pic.leetcode-cn.com/6777f38a8c8c443fde069cd4ffcbe39fc2828ff39ca3440fb01f15034e0271b8-file_1558924390353" alt="img"></p>
 
             </div>
             <hr/>
@@ -515,7 +517,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Moonk az</a>
+                    <a href="/about" rel="external nofollow noreferrer">Moonk Az</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -525,7 +527,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Moooonk-az.github.io/2020/09/09/memorydependenceanalysis/">http://Moooonk-az.github.io/2020/09/09/memorydependenceanalysis/</a>
+                    <a href="http://Moooonk-az.github.io/2020/09/17/lc009/">http://Moooonk-az.github.io/2020/09/17/lc009/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -538,7 +540,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Moonk az</a>
+                    <a href="/about" target="_blank">Moonk Az</a>
                     !
                 </span>
             </div>
@@ -563,8 +565,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/llvm/">
-                                    <span class="chip bg-color">llvm</span>
+                                <a href="/tags/leetcode/">
+                                    <span class="chip bg-color">leetcode</span>
                                 </a>
                             
                         </div>
@@ -606,9 +608,63 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/09/17/lc009/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="lc009">
+                        
+                        <span class="card-title">lc009</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            9. 回文数从简单开始记录收获吧回文的题有很多种，这种是很简单的；以前上课也有做过应该；
+直接回算，是很简单明了的一种思路：既然可回文，那么反向计算并判断最终结果是否与原来相等即可；
+另外此题负数并不是障碍，反而是可以直接返回false；
+
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CodeSet/" class="post-category">
+                                    CodeSet
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2020/09/11/diary20200911/">
                     <div class="card-image">
@@ -626,9 +682,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -646,59 +702,6 @@
                     
                     <a href="/tags/daily/">
                         <span class="chip bg-color">daily</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/09/09/memorydependenceanalysis/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="memorydependenceanalysis">
-                        
-                        <span class="card-title">memorydependenceanalysis</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            排版练习中
-123int a = 2;int b = a * 2;int c = a + b + 1;
-
-简单描述，上述三行代码，a,b,c之间是有依赖关系的，b需要a的值，c需要b的值更新，这就是依赖，由于指令需要提高并发度，所以其实是必
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-09
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/LLVM/" class="post-category">
-                                    LLVM
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/llvm/">
-                        <span class="chip bg-color">llvm</span>
                     </a>
                     
                 </div>
