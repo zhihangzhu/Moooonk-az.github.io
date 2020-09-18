@@ -4,6 +4,7 @@
 
 # Site
 title: Blog-zzh
+subtitle: 自闭少年的树洞
 description: ''
 keywords:
 author: Moonk AZ
@@ -44,7 +45,7 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace: ''
@@ -102,4 +103,6 @@ theme: hexo-theme-matery
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: git@github.com:Moooonk-az/Moooonk-az.github.io.git
+  branch: master
